@@ -118,7 +118,7 @@ class GitLogTask extends GitBaseTask
         if (null !== $this->getSince()) {
             $command->setOption('since', $this->getSince());
         }
-        
+
         if (null !== $this->getUntil()) {
             $command->setOption('until', $this->getUntil());
         }
@@ -141,7 +141,7 @@ class GitLogTask extends GitBaseTask
         }
 
         if (null !== $this->outputProperty) {
-            $this->project->setProperty($this->outputProperty, $output);
+            $this->project->setProperty($this->outputProperty, trim($output));
         }
 
         $this->log(
