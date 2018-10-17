@@ -117,7 +117,7 @@ class UnknownElement extends Task
             $parent = $parent->getProxy();
         }
 
-        $parentClass = get_class($parent);
+        $parentClass = $parent !== NULL ? get_class($parent) : get_class();
         $ih = IntrospectionHelper::getHelper($parentClass);
 
         for ($i = 0, $childrenCount = count($this->children); $i < $childrenCount; $i++) {
